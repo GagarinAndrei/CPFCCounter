@@ -2,8 +2,10 @@ package com.gagarin.cpfccounter
 
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.Text
@@ -28,7 +30,9 @@ fun CPFCOverview() {
         shape = CardDefaults.shape,
         elevation = CardDefaults.elevatedCardElevation()
     ) {
-        Column {
+        Column(
+            modifier = Modifier.padding(16.dp)
+        ) {
             Text(
                 text = stringResource(R.string.overview),
                 fontWeight = FontWeight.Bold,
@@ -36,11 +40,20 @@ fun CPFCOverview() {
                 textAlign = TextAlign.Center,
                 modifier = Modifier
                     .fillMaxWidth()
+                    .padding(8.dp)
             )
-            OverviewElement(item = stringResource(R.string.calories))
-            OverviewElement(item = stringResource(R.string.protein))
-            OverviewElement(item = stringResource(R.string.fat))
-            OverviewElement(item = stringResource(R.string.carbohydrates))
+            OverviewElement(
+                item = stringResource(R.string.calories)
+            )
+            OverviewElement(
+                item = stringResource(R.string.protein)
+            )
+            OverviewElement(
+                item = stringResource(R.string.fat)
+            )
+            OverviewElement(
+                item = stringResource(R.string.carbohydrates)
+            )
         }
     }
 }
@@ -52,14 +65,22 @@ fun OverviewElement(item: String) {
 
     Row(
         modifier = Modifier
-            .padding(4.dp)
+            .padding(8.dp)
             .fillMaxWidth()
     ) {
-        Text(text = item)
-        Text(text = "currentValue")
+        Text(
+            text = item,
+            modifier = Modifier.weight(2f)
+        )
+        Spacer(modifier = Modifier.size(4.dp))
+        Text(
+            text = "currentValue",
+//            modifier = Modifier.weight(1f)
+        )
+        Spacer(modifier = Modifier.size(4.dp))
         Text(
             text = "maxValue",
-            textAlign = TextAlign.End
+//            modifier = Modifier.weight(1f)
         )
     }
 }
