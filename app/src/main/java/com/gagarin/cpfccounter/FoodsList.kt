@@ -12,7 +12,9 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.toMutableStateList
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import com.gagarin.cpfccounter.ui.theme.CPFCCounterTheme
 
 @Composable
 fun FoodsList() {
@@ -22,8 +24,9 @@ fun FoodsList() {
         }.toMutableStateList()
     }
     Card(
-        shape = CardDefaults.shape,
-        elevation = CardDefaults.elevatedCardElevation()
+        shape = CardDefaults.elevatedShape,
+        elevation = CardDefaults.elevatedCardElevation(8.dp),
+        colors = CardDefaults.elevatedCardColors()
     ) {
         LazyColumn(
             contentPadding = PaddingValues(16.dp),
@@ -47,4 +50,13 @@ fun FoodListItem(foodName: String) {
         text = foodName,
         modifier = Modifier.fillMaxWidth()
     )
+}
+
+
+@Preview(showBackground = true)
+@Composable
+fun FoodListPreview() {
+    CPFCCounterTheme {
+        FoodsList()
+    }
 }

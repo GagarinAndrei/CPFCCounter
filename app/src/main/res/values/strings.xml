@@ -5,4 +5,5 @@
     <string name="protein">Protein:</string>
     <string name="fat">Fat:</string>
     <string name="carbohydrates">Carbohydrates:</string>
+    <string name="add_new_food">Add new food</string>
 </resources>
