@@ -3,6 +3,7 @@ package com.gagarin.cpfccounter
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.material3.Card
@@ -46,10 +47,18 @@ fun FoodsList() {
 
 @Composable
 fun FoodListItem(foodName: String) {
-    Text(
-        text = foodName,
-        modifier = Modifier.fillMaxWidth()
-    )
+    Card(
+        shape = CardDefaults.elevatedShape,
+        elevation = CardDefaults.elevatedCardElevation(8.dp),
+        colors = CardDefaults.elevatedCardColors()
+    ) {
+        Text(
+            text = foodName,
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(4.dp)
+        )
+    }
 }
 
 
