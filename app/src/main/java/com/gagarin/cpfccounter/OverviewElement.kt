@@ -11,7 +11,9 @@ import androidx.compose.material3.LinearProgressIndicator
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import com.gagarin.cpfccounter.ui.theme.CPFCCounterTheme
 
 @Composable
 fun OverviewElement(item: String) {
@@ -43,5 +45,13 @@ fun OverviewElement(item: String) {
             progress = 1.0f,
             modifier = Modifier.fillMaxWidth()
         )
+    }
+}
+
+@Preview(showBackground = true)
+@Composable
+fun OverviewElementPreview() {
+    CPFCCounterTheme {
+        OverviewElement("Calories")
     }
 }
