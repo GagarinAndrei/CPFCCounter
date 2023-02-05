@@ -1,4 +1,4 @@
-package com.gagarin.cpfccounter
+package com.gagarin.cpfccounter.ui.mainscreen
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -17,8 +17,6 @@ import com.gagarin.cpfccounter.ui.theme.CPFCCounterTheme
 
 @Composable
 fun OverviewElement(item: String) {
-//    var maxValue by remember { StateOf("0") }
-//    var currentValue by remember { mutableStateOf("0") }
     Column {
         Row(
             horizontalArrangement = Arrangement.SpaceBetween,
@@ -30,12 +28,12 @@ fun OverviewElement(item: String) {
                 text = item,
                 modifier = Modifier.weight(1f)
             )
-            Spacer(modifier = Modifier.size(4.dp))
+            Spacer(modifier = Modifier.size(8.dp))
             Text(
                 text = "currentValue",
 //            modifier = Modifier.weight(1f)
             )
-            Spacer(modifier = Modifier.size(4.dp))
+            Spacer(modifier = Modifier.size(8.dp))
             Text(
                 text = "maxValue",
 //            modifier = Modifier.weight(1f)

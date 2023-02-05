@@ -1,4 +1,4 @@
-package com.gagarin.cpfccounter
+package com.gagarin.cpfccounter.ui.mainscreen
 
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -24,6 +24,8 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.gagarin.cpfccounter.R
+import com.gagarin.cpfccounter.data.DataSource
 import com.gagarin.cpfccounter.ui.theme.CPFCCounterTheme
 
 @Composable
@@ -33,7 +35,7 @@ fun MainScreen() {
     ) {
         Box {
             Column {
-                Spacer(modifier = Modifier.height(16.dp))
+                Spacer(modifier = Modifier.height(8.dp))
                 Card(
                     shape = CardDefaults.elevatedShape,
                     elevation = CardDefaults.elevatedCardElevation(8.dp),
@@ -49,10 +51,10 @@ fun MainScreen() {
                             .fillMaxWidth()
                     )
                 }
-                Spacer(modifier = Modifier.height(16.dp))
+                Spacer(modifier = Modifier.height(8.dp))
                 CPFCOverview()
-                Spacer(modifier = Modifier.height(16.dp))
-                FoodsList()
+                Spacer(modifier = Modifier.height(8.dp))
+                FoodsList(foodList = DataSource().loadFoods())
             }
             FloatingActionButton(
                 onClick = { /*TODO*/ },

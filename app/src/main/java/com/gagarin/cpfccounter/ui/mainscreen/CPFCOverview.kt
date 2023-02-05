@@ -1,4 +1,4 @@
-package com.gagarin.cpfccounter
+package com.gagarin.cpfccounter.ui.mainscreen
 
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -14,6 +14,7 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.gagarin.cpfccounter.R
 import com.gagarin.cpfccounter.ui.theme.CPFCCounterTheme
 
 @Composable

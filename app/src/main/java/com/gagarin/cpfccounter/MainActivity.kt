@@ -8,6 +8,7 @@ import androidx.compose.material3.Surface
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import com.gagarin.cpfccounter.ui.mainscreen.MainScreen
 import com.gagarin.cpfccounter.ui.theme.CPFCCounterTheme
 
 class MainActivity : ComponentActivity() {
