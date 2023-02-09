@@ -18,21 +18,21 @@ import com.gagarin.cpfccounter.R
 import com.gagarin.cpfccounter.ui.theme.CPFCCounterTheme
 
 @Composable
-fun CPFCOverview() {
+fun CPFCOverview(modifier: Modifier = Modifier) {
     Card(
-        shape = CardDefaults.elevatedShape,
-        elevation = CardDefaults.elevatedCardElevation(defaultElevation = 8.dp),
+        modifier = modifier.padding(8.dp),
+        elevation = CardDefaults.elevatedCardElevation(defaultElevation = 4.dp),
         colors = CardDefaults.elevatedCardColors()
     ) {
         Column(
-            modifier = Modifier.padding(16.dp)
+            modifier = modifier.padding(8.dp)
         ) {
             Text(
                 text = stringResource(R.string.overview),
                 fontWeight = FontWeight.Bold,
                 fontSize = 24.sp,
                 textAlign = TextAlign.Center,
-                modifier = Modifier
+                modifier = modifier
                     .fillMaxWidth()
                     .padding(8.dp)
             )

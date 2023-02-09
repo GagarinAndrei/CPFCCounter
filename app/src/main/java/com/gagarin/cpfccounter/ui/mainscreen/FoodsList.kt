@@ -31,8 +31,8 @@ fun FoodsList(foodList: List<Food>, modifier: Modifier = Modifier) {
 //    }
     LazyColumn(
         contentPadding = PaddingValues(8.dp),
-        verticalArrangement = Arrangement.spacedBy(8.dp),
-        modifier = Modifier
+        verticalArrangement = Arrangement.spacedBy(4.dp),
+        modifier = modifier
             .fillMaxWidth()
     ) {
         items(foodList) { item ->
@@ -43,20 +43,19 @@ fun FoodsList(foodList: List<Food>, modifier: Modifier = Modifier) {
 }
 
 @Composable
-fun FoodListItemCard(food: Food) {
+fun FoodListItemCard(food: Food, modifier: Modifier = Modifier) {
     Card(
-        shape = CardDefaults.elevatedShape,
-        elevation = CardDefaults.elevatedCardElevation(8.dp),
+        elevation = CardDefaults.elevatedCardElevation(4.dp),
         colors = CardDefaults.elevatedCardColors()
     ) {
         Text(
             text = food.foodName,
-            modifier = Modifier
+            modifier = modifier
                 .fillMaxWidth()
                 .padding(8.dp)
         )
         Row(
-            modifier = Modifier
+            modifier = modifier
                 .padding(8.dp)
                 .fillMaxWidth(),
             horizontalArrangement = Arrangement.SpaceBetween

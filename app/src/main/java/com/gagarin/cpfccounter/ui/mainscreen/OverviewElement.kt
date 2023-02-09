@@ -16,32 +16,30 @@ import androidx.compose.ui.unit.dp
 import com.gagarin.cpfccounter.ui.theme.CPFCCounterTheme
 
 @Composable
-fun OverviewElement(item: String) {
+fun OverviewElement(item: String, modifier: Modifier = Modifier) {
     Column {
         Row(
             horizontalArrangement = Arrangement.SpaceBetween,
-            modifier = Modifier
-                .padding(8.dp)
+            modifier = modifier
+                .padding(4.dp)
                 .fillMaxWidth()
         ) {
             Text(
                 text = item,
-                modifier = Modifier.weight(1f)
+                modifier = modifier.weight(1f)
             )
-            Spacer(modifier = Modifier.size(8.dp))
+            Spacer(modifier = modifier.size(4.dp))
             Text(
                 text = "currentValue",
-//            modifier = Modifier.weight(1f)
             )
-            Spacer(modifier = Modifier.size(8.dp))
+            Text(text = " / ")
             Text(
                 text = "maxValue",
-//            modifier = Modifier.weight(1f)
             )
         }
         LinearProgressIndicator(
             progress = 1.0f,
-            modifier = Modifier.fillMaxWidth()
+            modifier = modifier.fillMaxWidth()
         )
     }
 }
