@@ -29,13 +29,15 @@ import com.gagarin.cpfccounter.data.DataSource
 import com.gagarin.cpfccounter.ui.theme.CPFCCounterTheme
 
 @Composable
-fun MainScreen() {
+fun MainScreen(modifier: Modifier = Modifier) {
     Surface(
-        modifier = Modifier.fillMaxSize()
+        modifier = modifier.fillMaxSize()
     ) {
         Box {
-            Column {
-                Spacer(modifier = Modifier.height(8.dp))
+            Column (
+                modifier = modifier.padding(8.dp)
+            ) {
+                Spacer(modifier = modifier.height(8.dp))
                 Card(
                     shape = CardDefaults.elevatedShape,
                     elevation = CardDefaults.elevatedCardElevation(8.dp),
@@ -46,14 +48,14 @@ fun MainScreen() {
                         fontWeight = FontWeight.Bold,
                         fontSize = 24.sp,
                         textAlign = TextAlign.Center,
-                        modifier = Modifier
+                        modifier = modifier
                             .padding(8.dp)
                             .fillMaxWidth()
                     )
                 }
-                Spacer(modifier = Modifier.height(8.dp))
+                Spacer(modifier = modifier.height(8.dp))
                 CPFCOverview()
-                Spacer(modifier = Modifier.height(8.dp))
+                Spacer(modifier = modifier.height(8.dp))
                 FoodsList(foodList = DataSource().loadFoods())
             }
             FloatingActionButton(
