@@ -59,7 +59,7 @@ fun FoodsList(foodList: List<Food>, modifier: Modifier = Modifier) {
 fun FoodListItemCard(food: Food, modifier: Modifier = Modifier) {
     var extended by remember() { mutableStateOf(false) }
     Card(
-        elevation = CardDefaults.elevatedCardElevation(4.dp),
+        elevation = CardDefaults.elevatedCardElevation(8.dp),
         colors = CardDefaults.elevatedCardColors()
     ) {
         Column(
@@ -109,7 +109,10 @@ fun FoodExtendedInfo(food: Food, modifier: Modifier = Modifier) {
             valueName = stringResource(id = R.string.prot),
             value = food.protein.toString()
         )
-        ValueItem(valueName = stringResource(id = R.string.fat), value = food.fat.toString())
+        ValueItem(
+            valueName = stringResource(id = R.string.fat),
+            value = food.fat.toString()
+        )
         ValueItem(
             valueName = stringResource(id = R.string.carbs),
             value = food.carbohydrates.toString()
