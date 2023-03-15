@@ -20,7 +20,7 @@ import com.gagarin.cpfccounter.ui.theme.CPFCCounterTheme
 @Composable
 fun CPFCOverview(modifier: Modifier = Modifier) {
     Card(
-        elevation = CardDefaults.elevatedCardElevation(8.dp),
+        elevation = CardDefaults.elevatedCardElevation(4.dp),
         colors = CardDefaults.elevatedCardColors()
     ) {
         Column(

@@ -59,7 +59,7 @@ fun FoodsList(foodList: List<Food>, modifier: Modifier = Modifier) {
 fun FoodListItemCard(food: Food, modifier: Modifier = Modifier) {
     var extended by remember() { mutableStateOf(false) }
     Card(
-        elevation = CardDefaults.elevatedCardElevation(8.dp),
+        elevation = CardDefaults.elevatedCardElevation(4.dp),
         colors = CardDefaults.elevatedCardColors()
     ) {
         Column(

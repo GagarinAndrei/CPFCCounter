@@ -40,7 +40,7 @@ fun MainScreen(modifier: Modifier = Modifier) {
                 Spacer(modifier = modifier.height(8.dp))
                 Card(
                     shape = CardDefaults.elevatedShape,
-                    elevation = CardDefaults.elevatedCardElevation(8.dp),
+                    elevation = CardDefaults.elevatedCardElevation(4.dp),
                     colors = CardDefaults.elevatedCardColors()
                 ) {
                     Text(

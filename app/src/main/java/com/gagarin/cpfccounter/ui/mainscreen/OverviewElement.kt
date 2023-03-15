@@ -30,15 +30,15 @@ fun OverviewElement(item: String, modifier: Modifier = Modifier) {
             )
             Spacer(modifier = modifier.size(4.dp))
             Text(
-                text = "currentValue",
+                text = "100",
             )
             Text(text = " / ")
             Text(
-                text = "maxValue",
+                text = "200",
             )
         }
         LinearProgressIndicator(
-            progress = 1.0f,
+            progress = 0.7f,
             modifier = modifier.fillMaxWidth()
         )
     }
