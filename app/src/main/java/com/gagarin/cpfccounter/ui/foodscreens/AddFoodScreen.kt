@@ -1,4 +1,4 @@
-package com.gagarin.cpfccounter.ui.foodscreen
+package com.gagarin.cpfccounter.ui.foodscreens
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
@@ -36,14 +36,34 @@ fun AddFoodScreen(modifier: Modifier = Modifier) {
             Column(
                 modifier = modifier.padding(8.dp)
             ) {
-                FoodOverview()
+                EditFoodOverview()
+            }
+            FloatingActionButton(
+                onClick = { /*TODO*/ },
+                shape = RoundedCornerShape(4.dp),
+                modifier = modifier
+                    .padding(16.dp)
+                    .align(Alignment.BottomCenter)
+            ) {
+                Row(
+                    horizontalArrangement = Arrangement.Center,
+                    verticalAlignment = Alignment.CenterVertically,
+                    modifier = modifier.padding(16.dp)
+                ) {
+                    Icon(
+                        painter = painterResource(R.drawable.baseline_add_24),
+                        contentDescription = stringResource(R.string.add_new_food)
+                    )
+                    Spacer(modifier = modifier.size(4.dp))
+                    Text(text = "Add")
+                }
             }
         }
     }
 }
 
 @Composable
-fun FoodOverview(modifier: Modifier = Modifier) {
+fun EditFoodOverview(modifier: Modifier = Modifier) {
     Box(
         modifier = modifier.fillMaxSize()
     ) {
@@ -85,26 +105,6 @@ fun FoodOverview(modifier: Modifier = Modifier) {
                         label = { Text("Carbs") },
                         modifier = modifier.fillMaxWidth()
                     )
-                }
-            }
-
-            FloatingActionButton(
-                onClick = { /*TODO*/ },
-                shape = RoundedCornerShape(4.dp),
-                modifier = modifier
-                    .padding(16.dp)
-            ) {
-                Row(
-                    horizontalArrangement = Arrangement.Center,
-                    verticalAlignment = Alignment.CenterVertically,
-                    modifier = modifier.padding(16.dp)
-                ) {
-                    Icon(
-                        painter = painterResource(R.drawable.baseline_add_24),
-                        contentDescription = stringResource(R.string.add_new_food)
-                    )
-                    Spacer(modifier = modifier.size(4.dp))
-                    Text(text = "Save")
                 }
             }
         }

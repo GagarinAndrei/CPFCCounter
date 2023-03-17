@@ -1,5 +1,6 @@
 package com.gagarin.cpfccounter
 
+import android.content.res.Configuration
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
@@ -27,6 +28,14 @@ class MainActivity : ComponentActivity() {
 @Preview(showBackground = true)
 @Composable
 fun DefaultPreview() {
+    CPFCCounterTheme {
+        MainScreen()
+    }
+}
+@Preview(showBackground = true,
+uiMode = Configuration.UI_MODE_NIGHT_YES)
+@Composable
+fun DefaultPreviewNight() {
     CPFCCounterTheme {
         MainScreen()
     }
