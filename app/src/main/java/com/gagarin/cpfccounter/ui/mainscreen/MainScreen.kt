@@ -2,6 +2,7 @@ package com.gagarin.cpfccounter.ui.mainscreen
 
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.ColumnScope
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -34,24 +35,35 @@ fun MainScreen(modifier: Modifier = Modifier) {
         modifier = modifier.fillMaxSize()
     ) {
         Box {
-            Column (
+            Column(
                 modifier = modifier.padding(8.dp)
             ) {
                 Spacer(modifier = modifier.height(8.dp))
                 Card(
-                    shape = CardDefaults.elevatedShape,
                     elevation = CardDefaults.elevatedCardElevation(4.dp),
                     colors = CardDefaults.elevatedCardColors()
                 ) {
-                    Text(
-                        text = "01.01.2023",
-                        fontWeight = FontWeight.Bold,
-                        fontSize = 24.sp,
-                        textAlign = TextAlign.Center,
+                    Column(horizontalAlignment = Alignment.CenterHorizontally) {
+
+                        Text(
+                            text = "01.01.2023",
+                            fontWeight = FontWeight.Bold,
+                            fontSize = 24.sp,
+                            textAlign = TextAlign.Center,
                         modifier = modifier
                             .padding(8.dp)
                             .fillMaxWidth()
-                    )
+                        )
+                        Text(
+                            text = "Summary:",
+                            fontWeight = FontWeight.Bold,
+                            fontSize = 24.sp,
+                            textAlign = TextAlign.Center,
+                        modifier = modifier
+                            .padding(8.dp)
+                            .fillMaxWidth()
+                        )
+                    }
                 }
                 Spacer(modifier = modifier.height(8.dp))
                 CPFCOverview()

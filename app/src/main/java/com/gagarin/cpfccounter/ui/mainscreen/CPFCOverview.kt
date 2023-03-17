@@ -1,19 +1,17 @@
 package com.gagarin.cpfccounter.ui.mainscreen
 
+import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
-import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
-import androidx.compose.ui.text.font.FontWeight
-import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import androidx.compose.ui.unit.sp
 import com.gagarin.cpfccounter.R
 import com.gagarin.cpfccounter.ui.theme.CPFCCounterTheme
 
@@ -21,32 +19,33 @@ import com.gagarin.cpfccounter.ui.theme.CPFCCounterTheme
 fun CPFCOverview(modifier: Modifier = Modifier) {
     Card(
         elevation = CardDefaults.elevatedCardElevation(4.dp),
-        colors = CardDefaults.elevatedCardColors()
+        colors = CardDefaults.elevatedCardColors(),
+        modifier = modifier.fillMaxWidth()
     ) {
         Column(
-            modifier = modifier.padding(8.dp)
+            horizontalAlignment = Alignment.CenterHorizontally,
+            modifier = modifier.fillMaxWidth()
         ) {
-            Text(
-                text = stringResource(R.string.overview),
-                fontWeight = FontWeight.Bold,
-                fontSize = 24.sp,
-                textAlign = TextAlign.Center,
-                modifier = modifier
-                    .fillMaxWidth()
-                    .padding(8.dp)
-            )
             OverviewElement(
                 item = stringResource(R.string.calories)
             )
-            OverviewElement(
-                item = stringResource(R.string.protein)
-            )
-            OverviewElement(
-                item = stringResource(R.string.fat)
-            )
-            OverviewElement(
-                item = stringResource(R.string.carbohydrates)
-            )
+            Row(
+                horizontalArrangement = Arrangement.Center,
+//                modifier = modifier.fillMaxWidth(0.33f)
+            ) {
+                OverviewElement(
+                    item = stringResource(R.string.protein),
+                    modifier = modifier.fillMaxWidth(0.3f)
+                )
+                OverviewElement(
+                    item = stringResource(R.string.fat),
+                    modifier = modifier.fillMaxWidth(0.4f)
+                )
+                OverviewElement(
+                    item = stringResource(R.string.carbohydrates),
+                    modifier = modifier.fillMaxWidth(0.6f)
+                )
+            }
         }
     }
 }
