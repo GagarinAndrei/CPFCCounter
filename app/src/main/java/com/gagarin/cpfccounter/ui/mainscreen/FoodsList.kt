@@ -41,59 +41,61 @@ import java.security.AllPermission
 
 @Composable
 fun FoodsList(foodList: List<Food>, modifier: Modifier = Modifier) {
-    LazyColumn(
-        contentPadding = PaddingValues(bottom = 8.dp),
-        verticalArrangement = Arrangement.spacedBy(8.dp),
-        modifier = modifier
-            .fillMaxWidth()
+    Card(
+        elevation = CardDefaults.elevatedCardElevation(4.dp),
+        colors = CardDefaults.elevatedCardColors()
     ) {
-        items(foodList) { item ->
-            FoodListItemCard(food = item)
+        LazyColumn(
+            contentPadding = PaddingValues(bottom = 8.dp),
+            verticalArrangement = Arrangement.spacedBy(8.dp),
+            modifier = modifier
+                .fillMaxWidth()
+        ) {
+            items(foodList) { item ->
+                FoodListItemCard(food = item)
+            }
+
         }
-
     }
-
 }
 
 @Composable
 fun FoodListItemCard(food: Food, modifier: Modifier = Modifier) {
     var extended by remember() { mutableStateOf(false) }
-    Card(
-        elevation = CardDefaults.elevatedCardElevation(4.dp),
-        colors = CardDefaults.elevatedCardColors()
+
+    Column(
+        modifier = Modifier
+            .animateContentSize(
+                animationSpec = spring(
+                    dampingRatio = Spring.DampingRatioLowBouncy,
+                    stiffness = Spring.StiffnessHigh
+                )
+            )
+            .padding(8.dp)
     ) {
-        Column(
-            modifier = Modifier
-                .animateContentSize(
-                    animationSpec = spring(
-                        dampingRatio = Spring.DampingRatioLowBouncy,
-                        stiffness = Spring.StiffnessHigh
-                    )
-                )
-                .padding(8.dp)
-        ) {
-            Row(
-                modifier = modifier
+
+        Text(
+            text = food.foodName
+        )
+
+        Row(
+            modifier = modifier
 //                    .padding(8.dp)
-                    .fillMaxWidth(),
-                horizontalArrangement = Arrangement.SpaceBetween,
-                verticalAlignment = Alignment.CenterVertically
-            ) {
-                Text(
-                    text = food.foodName
-                )
-                ValueItem(
-                    valueName = stringResource(id = R.string.cal),
-                    value = food.calories.toString()
-                )
-                FoodItemButton(
-                    extended = extended,
-                    onClick = { extended = !extended }
-                )
-            }
-            if (extended) {
-                FoodExtendedInfo(food = food)
-            }
+                .fillMaxWidth(),
+            horizontalArrangement = Arrangement.SpaceBetween,
+            verticalAlignment = Alignment.CenterVertically
+        ) {
+            ValueItem(
+                valueName = stringResource(id = R.string.cal),
+                value = food.calories.toString()
+            )
+            FoodItemButton(
+                extended = extended,
+                onClick = { extended = !extended }
+            )
+        }
+        if (extended) {
+            FoodExtendedInfo(food = food)
         }
     }
 }
